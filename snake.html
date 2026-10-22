@@ -22,9 +22,102 @@
       justify-content: center;
       overflow: hidden;
       user-select: none;
+      position: relative;
+    }
+
+    /* Jesus background image */
+    .bg-jesus {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.22) 0%, rgba(8, 8, 17, 0) 70%),
+                  url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Spas_vsederzhitel_sinay.jpg/480px-Spas_vsederzhitel_sinay.jpg") center/contain no-repeat;
+      border-radius: 50%;
+      box-shadow: 0 0 50px rgba(255, 215, 0, 0.35);
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 0;
+      filter: saturate(1.4) drop-shadow(0 0 15px #ffd700);
+    }
+
+    /* Scattered "Heja GAIS" background elements */
+    .bg-gais-text {
+      position: fixed;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      pointer-events: none;
+      z-index: 0;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .gais-1 {
+      top: 8%;
+      left: 6%;
+      font-size: 2.2rem;
+      color: #00ff66;
+      text-shadow: 0 0 12px #00ff66, 0 0 25px rgba(0, 255, 102, 0.6);
+      transform: rotate(-14deg);
+      opacity: 0.35;
+    }
+
+    .gais-2 {
+      top: 15%;
+      right: 8%;
+      font-size: 1.8rem;
+      color: #ffd700;
+      text-shadow: 0 0 12px #ffd700, 0 0 24px rgba(255, 215, 0, 0.6);
+      transform: rotate(12deg);
+      opacity: 0.35;
+    }
+
+    .gais-3 {
+      bottom: 12%;
+      left: 8%;
+      font-size: 2.6rem;
+      color: #00ffaa;
+      text-shadow: 0 0 15px #00ffaa, 0 0 30px rgba(0, 255, 170, 0.5);
+      transform: rotate(8deg);
+      opacity: 0.3;
+    }
+
+    .gais-4 {
+      bottom: 14%;
+      right: 7%;
+      font-size: 2rem;
+      color: #39ff14;
+      text-shadow: 0 0 14px #39ff14, 0 0 28px rgba(57, 255, 20, 0.6);
+      transform: rotate(-18deg);
+      opacity: 0.35;
+    }
+
+    .gais-5 {
+      top: 48%;
+      left: 2%;
+      font-size: 1.5rem;
+      color: #20e3b2;
+      text-shadow: 0 0 10px #20e3b2;
+      transform: rotate(-90deg);
+      opacity: 0.25;
+    }
+
+    .gais-6 {
+      top: 50%;
+      right: 2%;
+      font-size: 1.5rem;
+      color: #a8ff78;
+      text-shadow: 0 0 10px #a8ff78;
+      transform: rotate(90deg);
+      opacity: 0.25;
     }
 
     h1 {
+      position: relative;
+      z-index: 1;
       font-size: 2.5rem;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -34,6 +127,8 @@
     }
 
     .scoreboard {
+      position: relative;
+      z-index: 1;
       display: flex;
       gap: 30px;
       font-size: 1.1rem;
@@ -59,6 +154,7 @@
 
     .game-container {
       position: relative;
+      z-index: 1;
       border: 3px solid #00ffcc;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0, 255, 204, 0.45), inset 0 0 20px rgba(0, 255, 204, 0.1);
@@ -107,6 +203,8 @@
     }
 
     .instructions {
+      position: relative;
+      z-index: 1;
       margin-top: 15px;
       font-size: 0.85rem;
       color: #64748b;
@@ -127,6 +225,17 @@
   </style>
 </head>
 <body>
+  <!-- Jesus Background Art -->
+  <div class="bg-jesus" aria-hidden="true"></div>
+
+  <!-- Decorative "Heja GAIS" texts -->
+  <div class="bg-gais-text gais-1" aria-hidden="true">★ HEJA GAIS ★</div>
+  <div class="bg-gais-text gais-2" aria-hidden="true">HEJA GAIS!</div>
+  <div class="bg-gais-text gais-3" aria-hidden="true">GRÖNSVART • GAIS</div>
+  <div class="bg-gais-text gais-4" aria-hidden="true">HEJA GAIS ⚡</div>
+  <div class="bg-gais-text gais-5" aria-hidden="true">HEJA GAIS</div>
+  <div class="bg-gais-text gais-6" aria-hidden="true">HEJA GAIS</div>
+
   <h1>Neon Snake</h1>
   <div class="scoreboard">
     <div class="score-box">Score: <span id="score" class="score-value">0</span></div>
